@@ -38,6 +38,7 @@ namespace Tehtava1
             {
                 double result;
                 result = BusinessLogicWindow.CalculatePerimeter(1, 1);
+                //Ei näin: BusinessLogicWindow.CalculatePerimeter(1, 1);
             }
             catch (Exception ex)
             {
@@ -49,20 +50,11 @@ namespace Tehtava1
             }
         }
 
-    private void btnClose_Click(object sender, RoutedEventArgs e)
+        private void btnClose_Click(object sender, RoutedEventArgs e)
     {
-      Application.Current.Shutdown();
+      Application.Current.Shutdown();// Sovellus(käynnissä oleva) suljetaan tällä komennolla
     }
   }
 
-  public class BusinessLogicWindow
-    {
-    /// <summary>
-    /// CalculatePerimeter calculates the perimeter of a window
-    /// </summary>
-    public static double CalculatePerimeter(double widht, double height)
-        {
-            throw new System.NotImplementedException();
-        }
-    }
+  
 }
