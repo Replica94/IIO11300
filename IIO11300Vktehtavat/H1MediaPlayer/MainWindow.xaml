@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="My finest Media Player" Height="350" Width="525" FontSize="16">
     <Grid>
-        <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="200,235,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnPause" Content="Pause" HorizontalAlignment="Left" Margin="280,235,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="360,235,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="28,235,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnPause" Content="Pause" HorizontalAlignment="Left" Margin="108,235,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="188,235,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
