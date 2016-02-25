@@ -1,0 +1,63 @@
+﻿<Window x:Class="H6Databinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:H6Databinding"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:p="clr-namespace:H6Databinding.Properties"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="600" FontSize="16">
+    <Window.Resources>
+        <sys:String x:Key="myApp">Aivan mahtava sovellus V1</sys:String>
+        <x:Array x:Key="myCourses" Type="sys:String">
+            <sys:String>IIO11300 Windows-ohjelmointi</sys:String>
+            <sys:String>IIO11100 Ohjelmistosuunnittelu</sys:String>
+            <sys:String>IIZP10210 Järjestelmäprojekti</sys:String>
+            <sys:String>IIO12345 Jotain aivan muuta</sys:String>
+        </x:Array>
+    </Window.Resources>
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <!-- vasemmanpuoleinen sp textboxin bindauksia erilaisiin lähteisiin-->
+            <StackPanel Background="LightGreen">
+                <TextBlock>Different Databindings</TextBlock>
+                <TextBox x:Name="txtName" MaxWidth="120"/>
+                <TextBlock Text="{Binding ElementName=txtName, Path=Text}"/>
+                <TextBlock Text="{Binding ElementName=txtName, Path=Text.Length}" FontSize="{Binding ElementName=txtName, Path=Text.Length}"/>
+                <TextBlock>Sidonta App.Configiin</TextBlock>
+                <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=UserName}"/>
+                <TextBlock>Sidonta staattiseen resurssiin</TextBlock>
+                <TextBlock Text="{Binding Source={StaticResource myApp}}"/>
+                <Button x:Name="btnGetSettings" Content="Hae käyttäjä" Click="btnGetSettings_Click"></Button>
+            </StackPanel>
+            <!-- erilaisia sidontoja kokoelmiin-->
+            <StackPanel Background="{Binding ElementName=cbColors, Path=SelectedItem.Content, Mode=OneWay}">
+                <TextBlock>Comboboxin itemit kovakoodattu</TextBlock>
+                <ComboBox x:Name="cbColors">
+                    <ComboBoxItem Content="Cyan"/>
+                    <ComboBoxItem Content="Blue"/>
+                    <ComboBoxItem Content="Green"/>
+                    <ComboBoxItem Content="Yellow"/>
+                    <ComboBoxItem Content="Red"/>
+                </ComboBox>
+                <TextBlock>Comboboxin itemit resursseista</TextBlock>
+                <ComboBox x:Name="cbCourses" ItemsSource="{Binding Source={StaticResource myCourses}}"></ComboBox>
+                <TextBox Text="{Binding ElementName=cbCourses, Path=SelectedItem}"></TextBox>
+                <ComboBox x:Name="cbTeams"/>
+            </StackPanel>
+            <!-- Bindaus oliokokoelmaan-->
+            <StackPanel x:Name="spLiiga" Background="LightBlue">
+                <TextBlock>Sidonta kokoelmaan</TextBlock>
+                <Button x:Name="btnBind" Content="Sido kokoelmaan" Click="btnBind_Click"/>
+                <TextBlock Text="{Binding }"/>
+                <!-- antamalla propertyn voidaan kertoa mihin sidotaan-->
+                <TextBox Text="{Binding Path=Name}"/>
+                <TextBox Text="{Binding Path=City}"/>
+                <Button x:Name="btnForward" Content="Forward" Click="btnForward_Click"/>
+                <Button x:Name="btwBackward" Content="Backward" Click="btwBackward_Click"/>
+                <Button x:Name="btnCreate" Content="Add a new team" Click="btnCreate_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

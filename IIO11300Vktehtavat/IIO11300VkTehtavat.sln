@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H3MittausData", "H3MittausD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H5Movies", "H5movies\H5Movies.csproj", "{44BFEAB7-70BB-4823-A977-0617100103E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H6Databinding", "H6Databinding\H6Databinding.csproj", "{FF656049-D90B-404A-8532-210F6407B5B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{44BFEAB7-70BB-4823-A977-0617100103E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44BFEAB7-70BB-4823-A977-0617100103E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44BFEAB7-70BB-4823-A977-0617100103E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF656049-D90B-404A-8532-210F6407B5B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF656049-D90B-404A-8532-210F6407B5B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF656049-D90B-404A-8532-210F6407B5B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF656049-D90B-404A-8532-210F6407B5B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
