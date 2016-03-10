@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H5Movies", "H5movies\H5Movi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H6Databinding", "H6Databinding\H6Databinding.csproj", "{FF656049-D90B-404A-8532-210F6407B5B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H7ADONETConsole", "H7ADONETConsole\H7ADONETConsole.csproj", "{D1C2BFE1-EECB-47B1-826A-176F05C7E1AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{FF656049-D90B-404A-8532-210F6407B5B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF656049-D90B-404A-8532-210F6407B5B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF656049-D90B-404A-8532-210F6407B5B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1C2BFE1-EECB-47B1-826A-176F05C7E1AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C2BFE1-EECB-47B1-826A-176F05C7E1AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1C2BFE1-EECB-47B1-826A-176F05C7E1AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C2BFE1-EECB-47B1-826A-176F05C7E1AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
