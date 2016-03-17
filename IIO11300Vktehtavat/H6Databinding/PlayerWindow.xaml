@@ -13,9 +13,9 @@
                 <TextBlock>Pelaaja:</TextBlock>
                 <TextBlock x:Name="tbPlayer" Text="{Binding Path=NameAndNumber , Mode=OneWay}" Background="Azure"></TextBlock>
                 <TextBlock>Nimi:</TextBlock>
-                <TextBox x:Name="txtName" Text="{Binding Path=Name, Mode=TwoWay}"></TextBox>
+                <TextBox x:Name="txtName" Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <TextBlock>Numero:</TextBlock>
-                <TextBox x:Name="txtNumber" Text="{Binding Path=Number, Mode=TwoWay}"></TextBox>
+                <TextBox x:Name="txtNumber" Text="{Binding Path=Number, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             </StackPanel>
             <!--oikeanpuoleinen stackpanel esittää kaikkien pelaajien tiedot-->
             <StackPanel Width="300">
