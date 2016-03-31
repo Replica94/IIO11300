@@ -1,0 +1,64 @@
+﻿<Window x:Class="H10BookShopEF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:H10BookShopEF"
+        mc:Ignorable="d"
+        Title="BookShopEF" Height="350" Width="600">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <Button x:Name="btnGetCustomers" Content="Hae asiakkaat EF" Click="btnGetCustomers_Click"/>
+                    <Button x:Name="btnGetEFBooks" Content="Hae kirjat EF" Click="btnGetEFBooks_Click"/>
+                    <ComboBox x:Name="cbCountries" ItemsSource="{Binding}"  SelectionChanged="cbCountries_SelectionChanged"/>
+                    
+                </StackPanel>
+                <StackPanel  Background="Orange">
+                    <TextBlock Text="Tuote: "/>
+                    <TextBlock Text="Nimi: "/>
+                    <TextBlock Text="Kirjailija: "/>
+                    <TextBlock Text="Maa: "/>
+                    <TextBlock Text="Vuosi: "/>
+                </StackPanel>
+                <StackPanel x:Name="spBooks" Background="Orange">
+                    <TextBlock x:Name="tbProduct" Text="{Binding Path=DisplayName, Mode=OneWay}"/>
+                    <TextBox x:Name="txtName" Text="{Binding Path=name, UpdateSourceTrigger=PropertyChanged}" Width="200" HorizontalAlignment="Left"></TextBox>
+                    <TextBox x:Name="txtAuthor" Text="{Binding Path=author, UpdateSourceTrigger=PropertyChanged}" Width="200" HorizontalAlignment="Left"></TextBox>
+                    <TextBox x:Name="txtCountry" Text="{Binding Path=country, UpdateSourceTrigger=PropertyChanged}" Width="200" HorizontalAlignment="Left"></TextBox>
+                    <TextBox x:Name="txtYear" Text="{Binding Path=year, UpdateSourceTrigger=PropertyChanged}" Width="50" HorizontalAlignment="Left"></TextBox>
+                    <Button x:Name="btnSave" Content="Tallenna" Click="btnSave_Click"></Button>
+                    <Button x:Name="btnNew" Content="Uusi" Click="btnNew_Click"></Button>
+                    <Button x:Name="btnDelete" Content="Poista" Click="btnDelete_Click"></Button>
+                </StackPanel>
+                <StackPanel  Background="Aquamarine" Orientation="Vertical">
+                    <TextBlock Text="Asiakas: "/>
+                    <TextBlock Text="Etunimi: "/>
+                    <TextBlock Text="Sukunimi: "/>
+                    <TextBlock Text="Tilauksia: "/>
+                </StackPanel>
+                    <StackPanel x:Name="spCustomer" Background="Aquamarine">
+                    <TextBlock  Text="{Binding Path=DisplayName, Mode=OneWay}" ></TextBlock>
+                    <TextBox  Text="{Binding Path=firstname, UpdateSourceTrigger=PropertyChanged}" Width="200" HorizontalAlignment="Left"></TextBox>
+                    <TextBox  Text="{Binding Path=lastname, UpdateSourceTrigger=PropertyChanged}" Width="200" HorizontalAlignment="Left"></TextBox>
+                    <TextBox  Text="{Binding Path=OrderCount, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Width="50" HorizontalAlignment="Left"></TextBox>
+                    <Button x:Name="btnGetOrders" Content="Hae asiakkaan tilaukset" Click="btnGetOrders_Click"/>
+                </StackPanel>
+                    
+                    
+                
+            </StackPanel>
+            <StackPanel>
+                <DataGrid AutoGenerateColumns="True" ItemsSource="{Binding}" Height="Auto" VerticalAlignment="Top" Width="Auto" x:Name="dgBooks"  SelectionChanged="dgBooks_SelectionChanged" >
+
+                </DataGrid>
+            </StackPanel>
+            <StackPanel>
+                <StatusBar>
+                    <TextBox x:Name="tbMessage"/>
+                </StatusBar>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
